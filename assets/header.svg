@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title description">
+  <title id="title">栾俊辉 / Junhui Luan</title>
+  <desc id="description">Robotics, autonomous navigation and embodied intelligence at Hainan University</desc>
+
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071525"/>
+      <stop offset="0.55" stop-color="#102D49"/>
+      <stop offset="1" stop-color="#174E68"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#67E8F9"/>
+      <stop offset="1" stop-color="#60A5FA"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#5EEAD4" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#5EEAD4" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#BFE8FF" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="300" rx="22" fill="url(#background)"/>
+  <rect width="1200" height="300" rx="22" fill="url(#grid)"/>
+  <ellipse cx="995" cy="145" rx="280" ry="250" fill="url(#glow)"/>
+
+  <g opacity="0.82">
+    <circle cx="1012" cy="147" r="103" fill="none" stroke="#8BE8E1" stroke-opacity="0.22" stroke-width="1.5"/>
+    <circle cx="1012" cy="147" r="74" fill="none" stroke="#8BE8E1" stroke-opacity="0.34" stroke-width="1.5" stroke-dasharray="5 8"/>
+    <circle cx="1012" cy="147" r="44" fill="none" stroke="#8BE8E1" stroke-opacity="0.48" stroke-width="1.5"/>
+    <path d="M1012 147 L1091 91 M1012 147 L934 83 M1012 147 L948 218 M1012 147 L1094 210" stroke="#83E5DF" stroke-opacity="0.30" stroke-width="1.5"/>
+  </g>
+
+  <g fill="none" stroke="url(#accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#softGlow)">
+    <path d="M760 220 C818 204 833 160 884 170 C925 178 934 128 972 137 C1015 147 1034 99 1091 108"/>
+  </g>
+  <g fill="#9EF5EC" stroke="#0D2B44" stroke-width="3">
+    <circle cx="760" cy="220" r="7"/>
+    <circle cx="884" cy="170" r="7"/>
+    <circle cx="972" cy="137" r="7"/>
+    <circle cx="1091" cy="108" r="7"/>
+  </g>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif">
+    <text x="76" y="92" fill="#F8FAFC" font-size="42" font-weight="700" letter-spacing="0.5">栾俊辉 / Junhui Luan</text>
+    <rect x="76" y="116" width="86" height="4" rx="2" fill="url(#accent)"/>
+    <text x="76" y="160" fill="#D7EAF5" font-size="23" font-weight="500" letter-spacing="0.8">Robotics · Autonomous Navigation · Embodied Intelligence</text>
+    <text x="76" y="199" fill="#9FC1D6" font-size="18">Hainan University · Intelligent Science and Technology</text>
+
+    <g transform="translate(76 226)">
+      <rect width="116" height="34" rx="17" fill="#E6FFFB" fill-opacity="0.11" stroke="#8BE8E1" stroke-opacity="0.38"/>
+      <text x="58" y="23" text-anchor="middle" fill="#BDF8F1" font-size="14" font-weight="600">PERCEPTION</text>
+    </g>
+    <g transform="translate(202 226)">
+      <rect width="106" height="34" rx="17" fill="#E6FFFB" fill-opacity="0.11" stroke="#8BE8E1" stroke-opacity="0.38"/>
+      <text x="53" y="23" text-anchor="middle" fill="#BDF8F1" font-size="14" font-weight="600">PLANNING</text>
+    </g>
+    <g transform="translate(318 226)">
+      <rect width="104" height="34" rx="17" fill="#E6FFFB" fill-opacity="0.11" stroke="#8BE8E1" stroke-opacity="0.38"/>
+      <text x="52" y="23" text-anchor="middle" fill="#BDF8F1" font-size="14" font-weight="600">CONTROL</text>
+    </g>
+    <g transform="translate(432 226)">
+      <rect width="112" height="34" rx="17" fill="#E6FFFB" fill-opacity="0.11" stroke="#8BE8E1" stroke-opacity="0.38"/>
+      <text x="56" y="23" text-anchor="middle" fill="#BDF8F1" font-size="14" font-weight="600">SYSTEMS</text>
+    </g>
+  </g>
+</svg>
