@@ -58,7 +58,7 @@
 | Type | Work | Status |
 | --- | --- | --- |
 | Paper | *Anisotropic Spatiotemporal Risk Field for Smooth Predictive Navigation of Mobile Robots in Dynamic Environments* | ACIRS 2026, accepted, first author |
-| Paper | *Plane-to-Pipe Mounting Strategy for Snake Robots* | IEEE RA-L, under review, third author |
+| Paper | *Plane-to-Pipe Mounting Strategy for Snake Robots* | IEEE RA-L, under review, second author |
 | Patent application | 移动机器人预测性导航与动态避障方法及系统 | Formally accepted, second inventor |
 | Patent application | 一种蛇形机器人从支撑平面挂载至悬空水平管道的方法及系统 | Formally accepted, third inventor |
 
