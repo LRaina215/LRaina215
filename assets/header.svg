@@ -1,46 +1,164 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title description">
   <title id="title">栾俊辉 / Junhui Luan</title>
-  <desc id="description">A minimal white profile header featuring personal information, research interests, and Hainan University</desc>
+  <desc id="description">Warm minimal profile header: name and research interests on the left, an animated LiDAR scan-and-map scene on the right — a wheeled mobile robot follows a continuous loop while a rotating LiDAR sweep progressively reveals an occupancy map and scan points. Adapts to light and dark themes.</desc>
+
+  <style><![CDATA[
+    text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; }
+    .bg    { fill: #FFFFFF; }
+    .frame { stroke: #ECE2D4; }
+    .eyebrow{ fill: #C96A2B; }
+    .ink   { fill: #1A1510; }
+    .nameen{ fill: #9A8A76; }
+    .tag   { fill: #6E6154; }
+    .affil { fill: #5E5346; }
+    .rule  { stroke: #EDE3D5; }
+    .dotg  { fill: #E9DFD0; }
+    .route { stroke: #D9713C; }
+    .wall  { stroke: #6B5C4B; }
+    .pc    { fill: #D9713C; }
+    .cap   { fill: #B3A38D; }
+    .mark  { fill: #D9713C; }
+    .robot { fill: #2A211A; }
+    .nose  { fill: #D9713C; }
+    .hub   { fill: #D9713C; }
+    .sector{ fill: #D9713C; }
+    .ping  { stroke: #D9713C; }
+    @media (prefers-color-scheme: dark) {
+      .bg    { fill: #17120D; }
+      .frame { stroke: #2F271E; }
+      .eyebrow{ fill: #F2A76B; }
+      .ink   { fill: #F5EDE1; }
+      .nameen{ fill: #AC9C86; }
+      .tag   { fill: #B7A892; }
+      .affil { fill: #AB9D88; }
+      .rule  { stroke: #2F271E; }
+      .dotg  { fill: #332B21; }
+      .route { stroke: #FFC59B; }
+      .wall  { stroke: #8E7E68; }
+      .pc    { fill: #FFC59B; }
+      .cap   { fill: #71624F; }
+      .mark  { fill: #FFC59B; }
+      .robot { fill: #F5EDE1; }
+      .nose  { fill: #FFC59B; }
+      .hub   { fill: #FFC59B; }
+      .sector{ fill: #FFC59B; }
+      .ping  { stroke: #FFC59B; }
+    }
+    .wall, .ghost { fill: none; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .ghost { stroke: #9A8A76; opacity: .13; }
+    .wall { stroke-dasharray: 1; stroke-dashoffset: 0; }
+    .mapped { animation: map-cycle 18s linear infinite; }
+    .wall { animation: map-bottom 18s linear infinite; }
+    .east { animation-name: map-east; }
+    .north { animation-name: map-north; }
+    .west { animation-name: map-west; }
+    .pc { fill: none; stroke: #D9713C; stroke-width: 3; stroke-linecap: round; stroke-dasharray: .1 9; }
+    .returns { animation: hits-bottom 18s linear infinite; }
+    .returns.east { animation-name: hits-east; }
+    .returns.north { animation-name: hits-north; }
+    .returns.west { animation-name: hits-west; }
+    .sweep { animation: sweep 2.4s linear infinite; }
+    .pulse { animation: pulse 2.4s ease-out infinite; transform-origin: 0 0; }
+    .parked { display: none; }
+    @keyframes sweep { to { transform: rotate(360deg); } }
+    @keyframes pulse { from { transform: scale(.2); opacity: .35; } to { transform: scale(1); opacity: 0; } }
+    @keyframes map-cycle { 0%, 100% { opacity: .12; } 4%, 92% { opacity: 1; } }
+    @keyframes map-bottom { 0% { stroke-dashoffset: 1; } 28%, 100% { stroke-dashoffset: 0; } }
+    @keyframes map-east { 0%, 25% { stroke-dashoffset: 1; } 44%, 100% { stroke-dashoffset: 0; } }
+    @keyframes map-north { 0%, 40% { stroke-dashoffset: 1; } 76%, 100% { stroke-dashoffset: 0; } }
+    @keyframes map-west { 0%, 75% { stroke-dashoffset: 1; } 91%, 100% { stroke-dashoffset: 0; } }
+    @keyframes hits-bottom { 0% { opacity: 0; } 12%, 100% { opacity: .85; } }
+    @keyframes hits-east { 0%, 26% { opacity: 0; } 38%, 100% { opacity: .85; } }
+    @keyframes hits-north { 0%, 43% { opacity: 0; } 65%, 100% { opacity: .85; } }
+    @keyframes hits-west { 0%, 76% { opacity: 0; } 88%, 100% { opacity: .85; } }
+    @media (prefers-color-scheme: dark) { .pc { stroke: #FFC59B; } .ghost { stroke: #AC9C86; opacity: .18; } }
+    @media (prefers-reduced-motion: reduce) {
+      .wall, .mapped, .returns, .sweep, .pulse { animation: none; }
+      .wall { stroke-dashoffset: 0; }
+      .mapped { opacity: 1; }
+      .returns { opacity: .85; }
+      .moving { display: none; }
+      .parked { display: inline; }
+    }
+  ]]></style>
 
   <defs>
-    <linearGradient id="route" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#93C5FD" stop-opacity="0.18"/>
-      <stop offset="1" stop-color="#2563EB" stop-opacity="0.56"/>
-    </linearGradient>
-    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="1" fill="#B9CCE0" opacity="0.23"/>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" class="dotg"/>
     </pattern>
+    <clipPath id="scene-clip"><rect x="678" y="40" width="480" height="208" rx="12"/></clipPath>
+    <!-- Closed path: matching start/end position and tangent prevent a reset jump. -->
+    <path id="patrol" d="M784 207H1068C1094 207 1110 191 1110 165V145C1110 119 1094 103 1068 103H784C758 103 742 119 742 145V165C742 191 758 207 784 207Z"/>
+    <g id="chassis">
+      <rect x="-12" y="-13" width="11" height="5" rx="2" class="robot"/>
+      <rect x="4" y="-13" width="11" height="5" rx="2" class="robot"/>
+      <rect x="-12" y="8" width="11" height="5" rx="2" class="robot"/>
+      <rect x="4" y="8" width="11" height="5" rx="2" class="robot"/>
+      <rect x="-17" y="-9" width="36" height="18" rx="6" class="robot"/>
+      <rect x="-12" y="-6" width="24" height="12" rx="3" class="bg" opacity=".18"/>
+      <path d="M12 -5L16 0L12 5" fill="none" class="ping" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="-3" r="6" class="bg"/>
+      <circle cx="-3" r="3.7" class="hub"/>
+      <circle cx="-4" cy="-1" r="1.1" class="bg"/>
+    </g>
   </defs>
 
-  <rect width="1200" height="300" rx="22" fill="#FFFFFF"/>
-  <rect x="1" y="1" width="1198" height="298" rx="21" fill="none" stroke="#DCE5EE" stroke-width="2"/>
-  <rect x="42" y="47" width="5" height="182" rx="2.5" fill="#2563EB"/>
-  <rect x="742" y="20" width="430" height="260" fill="url(#dots)"/>
+  <rect width="1200" height="300" rx="22" class="bg"/>
+  <rect x="1.5" y="1.5" width="1197" height="297" rx="20.5" fill="none" class="frame" stroke-width="1.5"/>
 
-  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif">
-    <text x="72" y="65" fill="#2563EB" font-size="12" font-weight="750" letter-spacing="2.2">ACADEMIC PROFILE</text>
-    <text x="72" y="125" fill="#102A43" font-size="46" font-weight="760" letter-spacing="0.35">栾俊辉 / Junhui Luan</text>
-    <text x="72" y="173" fill="#334E68" font-size="22" font-weight="560" letter-spacing="0.25">Robotics · Autonomous Navigation · Embodied Intelligence</text>
-
-    <line x1="72" y1="199" x2="626" y2="199" stroke="#D9E4EE"/>
-    <rect x="72" y="220" width="10" height="10" rx="2" fill="#0EA5A4"/>
-    <text x="96" y="231" fill="#536B80" font-size="17" font-weight="520">Hainan University</text>
-    <circle cx="260" cy="225" r="2.5" fill="#A1B2C2"/>
-    <text x="276" y="231" fill="#536B80" font-size="17">Intelligent Science and Technology</text>
+  <!-- Conceptual SLAM scene, self-contained for embedding as an SVG image. -->
+  <g clip-path="url(#scene-clip)">
+    <rect x="678" y="40" width="480" height="208" fill="url(#dots)" opacity=".65"/>
+    <!-- A faint prior outline keeps the scene legible before the scan completes. -->
+    <g class="ghost">
+      <path d="M716 186V234H866 M892 234H1026 M1054 234H1140V178 M1140 150V70H1030 M1004 70H862 M830 70H710V154"/>
+      <path d="M846 140H910 M940 140H1004V171H930 M900 171H846V140"/>
+    </g>
+    <use href="#patrol" fill="none" class="route" stroke-width="1.3" stroke-dasharray="2 6" stroke-linecap="round" opacity=".3"/>
+    <g class="mapped">
+      <path pathLength="1" class="wall" d="M716 234H866M892 234H1026M1054 234H1140"/>
+      <path pathLength="1" class="wall east" d="M1140 234V178M1140 150V70H1030"/>
+      <path pathLength="1" class="wall north" d="M1004 70H862M830 70H710"/>
+      <path pathLength="1" class="wall west" d="M710 70V154M716 186V234"/>
+      <path pathLength="1" class="wall" d="M846 171H900M930 171H1004"/>
+      <path pathLength="1" class="wall east" d="M1004 171V140H940"/>
+      <path pathLength="1" class="wall north" d="M910 140H846V171"/>
+      <!-- Dotted returns lie on the observed side of each surface. -->
+      <g class="returns"><path class="pc" d="M728 227H865M892 228H1028M1054 226H1128M851 179H900M930 178H999"/></g>
+      <g class="returns east"><path class="pc" d="M1132 221V179M1133 148V79H1034M1012 166V137H943"/></g>
+      <g class="returns north"><path class="pc" d="M1002 78H863M829 77H720M909 132H840"/></g>
+      <g class="returns west"><path class="pc" d="M719 84V151M724 187V221M838 140V166"/></g>
+    </g>
+    <g class="moving">
+      <animateMotion dur="18s" repeatCount="indefinite" rotate="auto"><mpath href="#patrol"/></animateMotion>
+      <circle r="72" class="sector" opacity=".035"/>
+      <circle r="72" fill="none" class="ping" stroke-width=".8" opacity=".13"/>
+      <circle r="72" fill="none" class="ping pulse" stroke-width="1"/>
+      <g class="sweep">
+        <path d="M0 0L62.35 -36A72 72 0 0 1 72 0Z" class="sector" opacity=".12"/>
+        <path d="M0 0L70.43 -14.05A72 72 0 0 1 72 0Z" class="sector" opacity=".12"/>
+        <path d="M0 0H72" class="ping" stroke-width="1.2" opacity=".65"/>
+        <circle cx="72" r="2" class="hub" opacity=".8"/>
+      </g>
+      <use href="#chassis"/>
+    </g>
+    <g class="parked" transform="translate(880 207)">
+      <circle r="55" fill="none" class="ping" stroke-width="1" opacity=".18"/>
+      <use href="#chassis"/>
+    </g>
   </g>
+  <circle cx="746" cy="266" r="2.5" class="hub"/>
+  <text x="759" y="270" font-size="10.5" font-weight="600" class="cap" letter-spacing="1.4">LIDAR SLAM · AUTONOMOUS NAVIGATION</text>
 
-  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="1007" cy="137" r="76" stroke="#AFC4D8" stroke-width="1.5" opacity="0.24"/>
-    <circle cx="1007" cy="137" r="49" stroke="#AFC4D8" stroke-width="1.5" stroke-dasharray="4 7" opacity="0.30"/>
-    <path d="M1007 62V212M932 137H1082" stroke="#C5D5E4" stroke-width="1" opacity="0.28"/>
-    <path d="M752 226C807 211 824 171 868 179C910 187 921 144 961 151C1004 158 1027 108 1081 115C1112 119 1127 96 1150 79" stroke="url(#route)" stroke-width="3"/>
-  </g>
-
-  <g fill="#FFFFFF" stroke="#4D8FEA" stroke-width="2.5">
-    <circle cx="752" cy="226" r="6"/>
-    <circle cx="868" cy="179" r="6"/>
-    <circle cx="961" cy="151" r="6"/>
-    <circle cx="1081" cy="115" r="6"/>
-    <circle cx="1150" cy="79" r="6"/>
+  <!-- left text block -->
+  <g>
+    <text x="64" y="76" font-size="12.5" font-weight="700" letter-spacing="3.2" class="eyebrow">ACADEMIC PROFILE</text>
+    <text x="64" y="150" class="ink"><tspan font-size="52" font-weight="750">栾俊辉</tspan><tspan dx="16" dy="-6" font-size="25" font-weight="600" class="nameen">Junhui Luan</tspan></text>
+    <text x="64" y="196" font-size="19" font-weight="500" letter-spacing="0.4" class="tag">Robotics · Autonomous Navigation · Embodied Intelligence</text>
+    <line x1="64" y1="222" x2="612" y2="222" class="rule" stroke-width="1.2"/>
+    <rect x="64" y="240" width="9" height="9" rx="2" class="mark"/>
+    <text x="86" y="249" font-size="16.5" font-weight="600" class="affil">Hainan University</text>
+    <circle cx="252" cy="245.5" r="2.4" class="dotg"/>
+    <text x="268" y="249" font-size="16.5" class="affil">Intelligent Science and Technology</text>
   </g>
 </svg>

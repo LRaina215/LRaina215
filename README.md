@@ -26,41 +26,88 @@
 
 **面向动态环境的移动机器人平滑预测导航** · [Repository](https://github.com/LRaina215/SNAKE_TPCA-DCPA_NAV)
 
+<p align="center">
+  <img src="./assets/tcpa-dcpa-nav.gif" width="600" alt="同一动态场景下 TCPA/DCPA 预测规划与 TEB、DWB 的对比实验"/>
+</p>
+
 - 主导基于常速度卡尔曼滤波动态障碍跟踪和 TCPA/DCPA 各向异性时空风险场的 Nav2/DWB 局部规划方法设计与实现。
 - 引入横向逃逸与方向翻转抑制机制，并在 Gazebo 中搭建动态障碍场景开展对比实验。
 - 对比标准 DWB，仿真实验中的导航成功率由 60% 提升至 100%。
 
-`ROS2` `Nav2` `DWB` `Kalman Filter` `TCPA/DCPA` `Gazebo`
+![](https://img.shields.io/badge/ROS_2-2A211A?style=flat-square&logo=ros&logoColor=FFC59B)
+![](https://img.shields.io/badge/Nav2-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/Kalman_Filter-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/TCPA%2FDCPA-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/Gazebo-2A211A?style=flat-square&logoColor=FFC59B)
 
 ### 02 · RoboMaster Sentry Autonomy
 
 **哨兵机器人自主决策、导航与视觉自瞄系统** · [Navigation & Decision](https://github.com/LRaina215/HNU_NHS_SENTRY_UP) · [Vision & Auto-aim](https://github.com/LRaina215/HNU_NHS_SENTRY)
 
+<p align="center">
+  <img src="./assets/sentry-navigation.gif" width="420" alt="哨兵机器人实车导航避障测试"/>
+  &nbsp;
+  <img src="./assets/sentry-decision.gif" width="420" alt="行为树战术决策实时可视化"/>
+</p>
+
 - 负责自主导航与决策系统开发，完成 Point-LIO、Terrain Analysis、ICP、Theta* 与 DWB 的选型、集成、参数调优及实车联调。
 - 基于 BehaviorTree.CPP 实现巡逻、追击、交战和低血量回防等战术决策。
 - 搭建并改进 ROS2 自瞄系统，完成装甲板识别、位姿解算、目标跟踪与上下位机通信联调。
 
-`ROS2` `Point-LIO` `Nav2` `BehaviorTree.CPP` `OpenCV` `Eigen`
+![](https://img.shields.io/badge/ROS_2-2A211A?style=flat-square&logo=ros&logoColor=FFC59B)
+![](https://img.shields.io/badge/Point--LIO-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/Nav2-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/BehaviorTree.CPP-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/OpenCV-2A211A?style=flat-square&logo=opencv&logoColor=FFC59B)
+![](https://img.shields.io/badge/Eigen-2A211A?style=flat-square&logoColor=FFC59B)
 
 ### 03 · Multimodal Inspection & Delivery Robot
 
-**多模态自主巡检配送机器人** · [System Platform](https://github.com/LRaina215/QHXD_Web) · [Navigation](https://github.com/LRaina215/QHXD_NAV)
+**多模态自主巡检配送机器人** · [System Platform](https://github.com/LRaina215/QHXD_Web) · [Navigation](https://github.com/LRaina215/QHXD_NAV) · [Live](https://lingxunrobot.cn)
+
+<p align="center">
+  <img src="./assets/lingxun-ai-interaction.gif" width="420" alt="Web 端语音下发导航指令，AI 辅助语音导航控制"/>
+  &nbsp;
+  <img src="./assets/lingxun-dual-client.gif" width="420" alt="小程序与 Web 双端巡检回传，YOLO26 行人识别标记"/>
+</p>
 
 - 负责 RK3588 上位机系统总体设计与整车集成，实现导航、感知、任务管理、上下位机通信及多端交互模块协同。
 - 集成 Point-LIO、Theta* 与 Omni PID Pursuit，完成机器人自主导航与多航点巡检。
 - 部署 YOLO26、FunASR、DeepSeek 与 TTS，构建视觉感知、自然语言交互和任务反馈链路。
 - 开发 FastAPI 机器人后端、Cloud Gateway、Vue Web 平台与微信小程序，并完成公网部署与上线。
 
-`RK3588` `ROS2` `Nav2` `YOLO26` `FastAPI` `Vue` `HTTPS/WSS`
+![](https://img.shields.io/badge/RK3588-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/ROS_2-2A211A?style=flat-square&logo=ros&logoColor=FFC59B)
+![](https://img.shields.io/badge/Nav2-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/YOLO26-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/FastAPI-2A211A?style=flat-square&logo=fastapi&logoColor=FFC59B)
+![](https://img.shields.io/badge/Vue-2A211A?style=flat-square&logo=vuedotjs&logoColor=FFC59B)
+![](https://img.shields.io/badge/HTTPS%2FWSS-2A211A?style=flat-square&logoColor=FFC59B)
+
+### 04 · Bio-inspired Snake Robot (National Innovation Project)
+
+**面向三维复杂空间具备环境监测与自主运动能力的仿生机器蛇研发** · 国家级大学生创新创业训练计划 · 负责人 · [Navigation Module](https://github.com/LRaina215/SNAKE_TPCA-DCPA_NAV)
+
+- 主导仿生机器蛇系统总体方案：融合环境感知、三维定位、自主导航与多步态运动控制，面向化工厂、建筑废墟等危险、狭窄且非结构化三维空间的环境监测与巡检。
+- 提出利用蛇身与地面接触形成自支撑基座的构型构想，基于 MuJoCo 完成多版构型与步态仿真迭代。
+- 参与上管步态方案实机验证，负责运动学公式推导、步态示意图绘制与实验结果分析。
+- 目前正独立开展蛇形机器人顺应性运动控制（compliant motion control）方向的研究，工作进行中。
+- 本项目的预测导航方法研究作为独立课题展开（见 Project 01，EI 会议论文已录用）；平面-管道挂载策略成果投稿 IEEE RA-L（在审，见 Research Outputs）。
+
+![](https://img.shields.io/badge/MuJoCo-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/Gazebo-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/ROS_2-2A211A?style=flat-square&logo=ros&logoColor=FFC59B)
+![](https://img.shields.io/badge/Kinematics-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/Gait_Planning-2A211A?style=flat-square&logoColor=FFC59B)
 
 ## Research Outputs
 
 | Type | Work | Status |
 | --- | --- | --- |
-| Paper | *Anisotropic Spatiotemporal Risk Field for Smooth Predictive Navigation of Mobile Robots in Dynamic Environments* | ACIRS 2026, accepted, first author |
-| Paper | *Plane-to-Pipe Mounting Strategy for Snake Robots* | IEEE RA-L, under review, second author |
-| Patent application | 移动机器人预测性导航与动态避障方法及系统 | Formally accepted, second inventor |
-| Patent application | 一种蛇形机器人从支撑平面挂载至悬空水平管道的方法及系统 | Formally accepted, third inventor |
+| Conference paper | *Anisotropic Spatiotemporal Risk Field for Smooth Predictive Navigation of Mobile Robots in Dynamic Environments* | ACIRS 2026 · accepted · first author |
+| Journal paper | *Plane-to-Pipe Mounting Strategy for Snake Robots* | IEEE RA-L · under review · second author |
+| Invention patent | 移动机器人预测性导航与动态避障方法及系统 | formally accepted · second inventor |
+| Invention patent | 一种蛇形机器人从支撑平面挂载至悬空水平管道的方法及系统 | formally accepted · third inventor |
 
 ## Selected Honors
 
