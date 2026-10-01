@@ -92,7 +92,7 @@
 - 提出利用蛇身与地面接触形成自支撑基座的构型构想，基于 MuJoCo 完成多版构型与步态仿真迭代。
 - 参与上管步态方案实机验证，负责运动学公式推导、步态示意图绘制与实验结果分析。
 - 目前正独立开展蛇形机器人顺应性运动控制（compliant motion control）方向的研究，工作进行中。
-- 本项目的预测导航方法研究作为独立课题展开（见 Project 01，EI 会议论文已录用）；平面-管道挂载策略成果投稿 IEEE RA-L（在审，见 Research Outputs）。
+- 本项目的预测导航方法研究作为独立课题展开（见 Project 01，EI 会议论文已录用）。
 
 ![](https://img.shields.io/badge/MuJoCo-2A211A?style=flat-square&logoColor=FFC59B)
 ![](https://img.shields.io/badge/Gazebo-2A211A?style=flat-square&logoColor=FFC59B)
@@ -107,7 +107,6 @@
 | Conference paper | *Anisotropic Spatiotemporal Risk Field for Smooth Predictive Navigation of Mobile Robots in Dynamic Environments* | ACIRS 2026 · accepted · first author |
 | Journal paper | *Plane-to-Pipe Mounting Strategy for Snake Robots* | IEEE RA-L · under review · second author |
 | Invention patent | 移动机器人预测性导航与动态避障方法及系统 | formally accepted · second inventor |
-| Invention patent | 一种蛇形机器人从支撑平面挂载至悬空水平管道的方法及系统 | formally accepted · third inventor |
 
 ## Selected Honors
 
