@@ -10,6 +10,8 @@
   <a href="https://github.com/LRaina215/HNU_NHS_SENTRY_UP">RoboMaster Sentry</a>
   &nbsp;·&nbsp;
   <a href="https://github.com/LRaina215/QHXD_Web">Multimodal Mobile Robot</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/LRaina215/Yuntuo">YunTuo</a>
 </p>
 
 ## About Me
@@ -100,6 +102,33 @@
 ![](https://img.shields.io/badge/Kinematics-2A211A?style=flat-square&logoColor=FFC59B)
 ![](https://img.shields.io/badge/Gait_Planning-2A211A?style=flat-square&logoColor=FFC59B)
 
+### 05 · YunTuo Wheel-legged Robot
+
+**云拓轮腿机器人：自主导航与具身智能的持续迭代实践** · [Project](https://github.com/LRaina215/Yuntuo) · [FPGA Navigation](https://github.com/LRaina215/SOC_FPGA_NAV) · [Edge Intelligence](https://github.com/LRaina215/QHXD_Web/tree/yuntuo-fpga)
+
+<p align="center">
+  <a href="https://github.com/LRaina215/LRaina215/releases/tag/yuntuo-v1.0-demo">
+    <img src="./assets/yuntuo-demo.gif" width="760" alt="云拓实车演示：自主导航、人员跟随与智能找物，保留同步 Web 界面及第三人称视角；点击查看完整视频"/>
+  </a>
+  <br/>
+  <sub>自主导航 · 视觉跟随 · 智能找物 ｜ <a href="https://github.com/LRaina215/LRaina215/releases/tag/yuntuo-v1.0-demo">完整演示（4 分 50 秒，含现场讲解）</a></sub>
+</p>
+
+V1.0 基于高云 FPGA 与 RK3588 完成轮腿机器人原型，实现自主导航、视觉识别跟随及语音任务交互，并完成实车功能验证。
+
+- 开发并集成 RTL 与 PicoRV32 软核协同的片上导航系统，将雷达点云处理、滚动高程建图、地形可通行性分析、结构匹配与候选轨迹评估实现为硬件模块，与软核规划及轮腿运动控制衔接。
+- 结合轮速、IMU 与结构似然场（SLF）匹配进行定位，通过 Hessian 退化判别抑制弱约束方向的误修正；按雷达采集时刻对齐位姿，采用先匹配、后融合的处理流程，降低定位误差与姿态突变对地图的影响。
+- 实现记忆栅格与近场地图上的分层 A* 规划，结合硬件批量轨迹评分、机体足迹及轮地支撑检查处理地形约束，并串联自主探索、目标搜索跟随和受阻恢复。
+- 在 RK3588 上部署 YOLO26n、RGB-D 目标定位及本地语音与语言理解服务，贯通目标识别、任务解析、用户确认、FPGA 执行与状态反馈，并接入 Web 和微信小程序交互。
+
+后续 V2.0 将基于现有平台重新设计四连杆轮腿结构，在整车结构设计完成后开展强化学习训练，结合训练与实机验证持续优化结构和运动稳定性，逐步实现倒地自启、跳跃等能力，并作为视觉语言导航（VLN）的学习与实验平台。
+
+![](https://img.shields.io/badge/FPGA-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/Verilog-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/PicoRV32-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/RK3588-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/YOLO26n-2A211A?style=flat-square&logoColor=FFC59B)
+
 ## Research Outputs
 
 | Type | Work | Status |
@@ -121,9 +150,9 @@
 | --- | --- |
 | Robot systems | ROS2, SLAM, Nav2, BehaviorTree.CPP, robot integration and debugging |
 | Simulation | MuJoCo, Gazebo |
-| Programming | C/C++, Python, Linux, Git |
+| Programming | C/C++, Python, Verilog, Linux, Git |
 | Vision & numerical tools | OpenCV, Eigen, NumPy, Matplotlib |
-| System engineering | RK3588, FastAPI, Vue, HTTPS/WSS, edge-cloud communication |
+| System engineering | FPGA, PicoRV32, RK3588, FastAPI, Vue, HTTPS/WSS, edge-cloud communication |
 | Currently learning | Reinforcement learning fundamentals and embodied intelligence |
 
 ---
