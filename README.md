@@ -24,7 +24,21 @@
 
 ## Research Experience
 
-### 01 · Predictive Navigation in Dynamic Environments
+### 01 · Bio-inspired Snake Robot (National Innovation Project)
+
+**面向三维复杂空间具备环境监测与自主运动能力的仿生机器蛇研发** · 国家级大学生创新创业训练计划 · 负责人 · [Navigation Module](https://github.com/LRaina215/SNAKE_TPCA-DCPA_NAV)
+
+- 主导仿生机器蛇系统总体方案，融合环境感知、三维定位、自主导航与多步态运动控制，面向危险、狭窄且非结构化三维空间的监测与巡检。
+- 提出利用蛇身与地面接触形成自支撑基座的构型构想，基于 **MuJoCo** 完成多版构型与步态仿真迭代，参与上管步态实机验证并负责运动学推导、步态示意图绘制与实验结果分析。
+- 目前独立开展蛇形机器人**顺应性运动控制（compliant motion control）**方向研究；预测导航子课题已于 EI 会议发表（见 Research 02）。
+
+![](https://img.shields.io/badge/MuJoCo-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/Gazebo-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/ROS_2-2A211A?style=flat-square&logo=ros&logoColor=FFC59B)
+![](https://img.shields.io/badge/Kinematics-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/Gait_Planning-2A211A?style=flat-square&logoColor=FFC59B)
+
+### 02 · Predictive Navigation in Dynamic Environments
 
 **面向动态环境的移动机器人平滑预测导航** · ACIRS 2026（EI 会议已发表，第一作者） · [Repository](https://github.com/LRaina215/SNAKE_TPCA-DCPA_NAV)
 
@@ -41,20 +55,6 @@
 ![](https://img.shields.io/badge/Kalman_Filter-2A211A?style=flat-square&logoColor=FFC59B)
 ![](https://img.shields.io/badge/TCPA%2FDCPA-2A211A?style=flat-square&logoColor=FFC59B)
 ![](https://img.shields.io/badge/Gazebo-2A211A?style=flat-square&logoColor=FFC59B)
-
-### 02 · Bio-inspired Snake Robot (National Innovation Project)
-
-**面向三维复杂空间具备环境监测与自主运动能力的仿生机器蛇研发** · 国家级大学生创新创业训练计划 · 负责人 · [Navigation Module](https://github.com/LRaina215/SNAKE_TPCA-DCPA_NAV)
-
-- 主导仿生机器蛇系统总体方案，融合环境感知、三维定位、自主导航与多步态运动控制，面向危险、狭窄且非结构化三维空间的监测与巡检。
-- 提出利用蛇身与地面接触形成自支撑基座的构型构想，基于 **MuJoCo** 完成多版构型与步态仿真迭代，参与上管步态实机验证并负责运动学推导、步态示意图绘制与实验结果分析。
-- 目前独立开展蛇形机器人**顺应性运动控制（compliant motion control）**方向研究；预测导航子课题已于 EI 会议发表（见 Research 01）。
-
-![](https://img.shields.io/badge/MuJoCo-2A211A?style=flat-square&logoColor=FFC59B)
-![](https://img.shields.io/badge/Gazebo-2A211A?style=flat-square&logoColor=FFC59B)
-![](https://img.shields.io/badge/ROS_2-2A211A?style=flat-square&logo=ros&logoColor=FFC59B)
-![](https://img.shields.io/badge/Kinematics-2A211A?style=flat-square&logoColor=FFC59B)
-![](https://img.shields.io/badge/Gait_Planning-2A211A?style=flat-square&logoColor=FFC59B)
 
 ## Research Outputs
 
