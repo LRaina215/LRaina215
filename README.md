@@ -22,7 +22,7 @@
 
 > Undergraduate in Intelligent Science and Technology at Hainan University, working on robotics, autonomous navigation, robot perception, decision-making, FPGA–edge co-design, and full-stack system integration.
 
-## Selected Projects
+## Research Experience
 
 ### 01 · Predictive Navigation in Dynamic Environments
 
@@ -37,12 +37,36 @@
 - 在 50 组动态障碍对比测试中将导航成功率由 **60% 提升至 100%（+40 pp，仅风险场消融 88%）**，并在狭窄走廊与随机人群场景（各 20 组）完成泛化验证。
 
 ![](https://img.shields.io/badge/ROS_2-2A211A?style=flat-square&logo=ros&logoColor=FFC59B)
-![](https://img.shields.io/badge/Nav2-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/Nav2-2A211A?style=flat-square&logo=ros&logoColor=FFC59B)
 ![](https://img.shields.io/badge/Kalman_Filter-2A211A?style=flat-square&logoColor=FFC59B)
 ![](https://img.shields.io/badge/TCPA%2FDCPA-2A211A?style=flat-square&logoColor=FFC59B)
 ![](https://img.shields.io/badge/Gazebo-2A211A?style=flat-square&logoColor=FFC59B)
 
-### 02 · RoboMaster Sentry Autonomy
+### 02 · Bio-inspired Snake Robot (National Innovation Project)
+
+**面向三维复杂空间具备环境监测与自主运动能力的仿生机器蛇研发** · 国家级大学生创新创业训练计划 · 负责人 · [Navigation Module](https://github.com/LRaina215/SNAKE_TPCA-DCPA_NAV)
+
+- 主导仿生机器蛇系统总体方案，融合环境感知、三维定位、自主导航与多步态运动控制，面向危险、狭窄且非结构化三维空间的监测与巡检。
+- 提出利用蛇身与地面接触形成自支撑基座的构型构想，基于 **MuJoCo** 完成多版构型与步态仿真迭代，参与上管步态实机验证并负责运动学推导、步态示意图绘制与实验结果分析。
+- 目前独立开展蛇形机器人**顺应性运动控制（compliant motion control）**方向研究；预测导航子课题已于 EI 会议发表（见 Research 01）。
+
+![](https://img.shields.io/badge/MuJoCo-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/Gazebo-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/ROS_2-2A211A?style=flat-square&logo=ros&logoColor=FFC59B)
+![](https://img.shields.io/badge/Kinematics-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/Gait_Planning-2A211A?style=flat-square&logoColor=FFC59B)
+
+## Research Outputs
+
+| Type | Work | Status |
+| --- | --- | --- |
+| Conference paper | *Anisotropic Spatiotemporal Risk Field for Smooth Predictive Navigation of Mobile Robots in Dynamic Environments* | ACIRS 2026 · published · first author |
+| Invention patent | 移动机器人预测性导航与动态避障方法及系统 | published, under substantive examination · second inventor |
+| Invention patent | 一种蛇形机器人从支撑平面挂载至悬空水平管道的方法及系统 | formally accepted · fourth inventor |
+
+## Selected Projects
+
+### 01 · RoboMaster Sentry Autonomy
 
 **哨兵机器人自主决策、导航与视觉自瞄系统** · 全国大学生机器人大赛 RoboMaster 竞技奖 **国家级三等奖** · 导航与决策负责人<br>
 [Navigation & Decision](https://github.com/LRaina215/HNU_NHS_SENTRY_UP) · [Vision & Auto-aim](https://github.com/LRaina215/HNU_NHS_SENTRY)
@@ -59,12 +83,12 @@
 
 ![](https://img.shields.io/badge/ROS_2-2A211A?style=flat-square&logo=ros&logoColor=FFC59B)
 ![](https://img.shields.io/badge/Point--LIO-2A211A?style=flat-square&logoColor=FFC59B)
-![](https://img.shields.io/badge/Nav2-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/Nav2-2A211A?style=flat-square&logo=ros&logoColor=FFC59B)
 ![](https://img.shields.io/badge/BehaviorTree.CPP-2A211A?style=flat-square&logoColor=FFC59B)
 ![](https://img.shields.io/badge/OpenCV-2A211A?style=flat-square&logo=opencv&logoColor=FFC59B)
 ![](https://img.shields.io/badge/Eigen-2A211A?style=flat-square&logoColor=FFC59B)
 
-### 03 · Multimodal Inspection & Delivery Robot
+### 02 · Multimodal Inspection & Delivery Robot
 
 **灵巡 · 多模态自主巡检配送机器人** · 中国机器人及人工智能大赛机器人创新赛 **国家级一等奖** · 上位机系统开发负责人<br>
 [System Platform](https://github.com/LRaina215/QHXD_Web) · [Navigation](https://github.com/LRaina215/QHXD_NAV) · [Live](https://lingxunrobot.cn)（现网站已归属云拓）
@@ -82,27 +106,13 @@
 
 ![](https://img.shields.io/badge/RK3588-2A211A?style=flat-square&logoColor=FFC59B)
 ![](https://img.shields.io/badge/ROS_2-2A211A?style=flat-square&logo=ros&logoColor=FFC59B)
-![](https://img.shields.io/badge/Nav2-2A211A?style=flat-square&logoColor=FFC59B)
+![](https://img.shields.io/badge/Nav2-2A211A?style=flat-square&logo=ros&logoColor=FFC59B)
 ![](https://img.shields.io/badge/YOLO26-2A211A?style=flat-square&logoColor=FFC59B)
 ![](https://img.shields.io/badge/FastAPI-2A211A?style=flat-square&logo=fastapi&logoColor=FFC59B)
 ![](https://img.shields.io/badge/Vue-2A211A?style=flat-square&logo=vuedotjs&logoColor=FFC59B)
 ![](https://img.shields.io/badge/HTTPS%2FWSS-2A211A?style=flat-square&logoColor=FFC59B)
 
-### 04 · Bio-inspired Snake Robot (National Innovation Project)
-
-**面向三维复杂空间具备环境监测与自主运动能力的仿生机器蛇研发** · 国家级大学生创新创业训练计划 · 负责人 · [Navigation Module](https://github.com/LRaina215/SNAKE_TPCA-DCPA_NAV)
-
-- 主导仿生机器蛇系统总体方案，融合环境感知、三维定位、自主导航与多步态运动控制，面向危险、狭窄且非结构化三维空间的监测与巡检。
-- 提出利用蛇身与地面接触形成自支撑基座的构型构想，基于 **MuJoCo** 完成多版构型与步态仿真迭代，参与上管步态实机验证并负责运动学推导、步态示意图绘制与实验结果分析。
-- 目前独立开展蛇形机器人**顺应性运动控制（compliant motion control）**方向研究；预测导航子课题已于 EI 会议发表（见 Project 01）。
-
-![](https://img.shields.io/badge/MuJoCo-2A211A?style=flat-square&logoColor=FFC59B)
-![](https://img.shields.io/badge/Gazebo-2A211A?style=flat-square&logoColor=FFC59B)
-![](https://img.shields.io/badge/ROS_2-2A211A?style=flat-square&logo=ros&logoColor=FFC59B)
-![](https://img.shields.io/badge/Kinematics-2A211A?style=flat-square&logoColor=FFC59B)
-![](https://img.shields.io/badge/Gait_Planning-2A211A?style=flat-square&logoColor=FFC59B)
-
-### 05 · YunTuo Wheel-legged Robot
+### 03 · YunTuo Wheel-legged Robot
 
 **云拓轮腿机器人：自主导航与具身智能的持续迭代实践** · 全国大学生嵌入式芯片与系统设计竞赛 FPGA 创新设计赛道 **国家级三等奖** · FPGA 导航与系统集成负责人<br>
 [Project](https://github.com/LRaina215/Yuntuo) · [FPGA Navigation](https://github.com/LRaina215/SOC_FPGA_NAV) · [Edge Intelligence](https://github.com/LRaina215/QHXD_Web/tree/yuntuo-fpga) · [Live](https://lingxunrobot.cn)
@@ -129,14 +139,6 @@
 ![](https://img.shields.io/badge/PicoRV32-2A211A?style=flat-square&logoColor=FFC59B)
 ![](https://img.shields.io/badge/RK3588-2A211A?style=flat-square&logoColor=FFC59B)
 ![](https://img.shields.io/badge/YOLO26n-2A211A?style=flat-square&logoColor=FFC59B)
-
-## Research Outputs
-
-| Type | Work | Status |
-| --- | --- | --- |
-| Conference paper | *Anisotropic Spatiotemporal Risk Field for Smooth Predictive Navigation of Mobile Robots in Dynamic Environments* | ACIRS 2026 · published · first author |
-| Invention patent | 移动机器人预测性导航与动态避障方法及系统 | published, under substantive examination · second inventor |
-| Invention patent | 一种蛇形机器人从支撑平面挂载至悬空水平管道的方法及系统 | formally accepted · fourth inventor |
 
 ## Selected Honors
 
