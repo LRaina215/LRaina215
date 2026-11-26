@@ -26,7 +26,7 @@
 
 ### 01 · Predictive Navigation in Dynamic Environments
 
-**面向动态环境的移动机器人平滑预测导航** · ACIRS 2026（EI 会议录用，第一作者） · [Repository](https://github.com/LRaina215/SNAKE_TPCA-DCPA_NAV)
+**面向动态环境的移动机器人平滑预测导航** · ACIRS 2026（EI 会议已发表，第一作者） · [Repository](https://github.com/LRaina215/SNAKE_TPCA-DCPA_NAV)
 
 <p align="center">
   <img src="./assets/tcpa-dcpa-nav.gif" width="600" alt="同一动态场景下 TCPA/DCPA 预测规划与 TEB、DWB 的对比实验"/>
@@ -53,7 +53,7 @@
   <img src="./assets/sentry-decision.gif" width="420" alt="行为树战术决策实时可视化"/>
 </p>
 
-- 主导自主导航系统方案设计与实车联调，完成前端里程计 **Point-LIO**、点云地形分割（**Terrain Analysis**）、**ICP 全局重定位**及 **Theta\* / DWB** 规划控制的集成，并完成 TF、点云、代价地图与底盘控制全链路排障调优。
+- 主导自主导航系统方案设计与实车联调，完成前端里程计 **Point-LIO**、点云地形分割（**Terrain Analysis**）、**ICP 全局重定位**及 **Theta\* / DWB** 规划控制的集成，针对 TF 变换、定位、代价地图与底盘控制链路开展实车联调与故障排查。
 - 基于 **BehaviorTree.CPP** 融合下位机状态、自瞄目标与里程计信息，编写条件与动作节点，实现巡逻、追击、交战与低血量回防等动态战术决策。
 - 搭建并改进 **ROS2 视觉自瞄系统**，完成装甲板识别、位姿解算、目标跟踪与上下位机通信联调，形成目标感知–战术决策–自主交战的实车闭环。
 
@@ -76,8 +76,8 @@
 </p>
 
 - 基于 **RK3588 智能计算平台 + RT-Thread 实时控制器**协同架构，主导上位机总体设计与整车集成，打通导航、感知、任务管理、上下位机通信与多端交互链路。
-- 集成 **Point-LIO、Theta\* 与 Omni PID Pursuit**，完成 URDF/TF 校准与 Nav2 参数调优，实现自主导航与多航点稳定巡检。
-- 在 RK3588 端部署 **YOLO26、FunASR、DeepSeek 与 TTS**，实现视觉目标识别、事件记录与视频回传，以及自然语言指令解析、任务确认与状态反馈。
+- 集成 **Point-LIO** 前端里程计、**Theta\*** 全局规划算法与 **Omni PID Pursuit** 局部规划器，完成 URDF/TF 校准与 Nav2 参数调优，实现自主导航与多航点稳定巡检。
+- 在 RK3588 端部署 **YOLO26、FunASR、DeepSeek 与 TTS**，实现视觉目标识别、巡检异常记录与视频回传，以及自然语言指令解析、任务确认与状态反馈。
 - 开发 **FastAPI 后端、Cloud Gateway、Vue Web 与微信小程序**，基于 HTTPS/WSS 传输任务、导航与实时视频，并完成备案审核与公网上线。
 
 ![](https://img.shields.io/badge/RK3588-2A211A?style=flat-square&logoColor=FFC59B)
@@ -94,7 +94,7 @@
 
 - 主导仿生机器蛇系统总体方案，融合环境感知、三维定位、自主导航与多步态运动控制，面向危险、狭窄且非结构化三维空间的监测与巡检。
 - 提出利用蛇身与地面接触形成自支撑基座的构型构想，基于 **MuJoCo** 完成多版构型与步态仿真迭代，参与上管步态实机验证并负责运动学推导、步态示意图绘制与实验结果分析。
-- 目前独立开展蛇形机器人**顺应性运动控制（compliant motion control）**方向研究；预测导航子课题获 EI 会议录用（见 Project 01）。
+- 目前独立开展蛇形机器人**顺应性运动控制（compliant motion control）**方向研究；预测导航子课题已于 EI 会议发表（见 Project 01）。
 
 ![](https://img.shields.io/badge/MuJoCo-2A211A?style=flat-square&logoColor=FFC59B)
 ![](https://img.shields.io/badge/Gazebo-2A211A?style=flat-square&logoColor=FFC59B)
@@ -117,10 +117,10 @@
 
 **V1.0** 基于**高云 GW5AT-LV138 FPGA + RK3588** 异构协同架构完成轮腿机器人原型，实现片上实时自主导航、视觉识别跟随及语音任务交互，并完成实车闭环验证：
 
-- 主导 **RTL + PicoRV32 RISC-V 软核协同片上导航系统**开发与同片联合综合集成，将雷达点云投影、128×128 滚动高程建图、地形可通行性分析、结构匹配与候选轨迹评估实现为硬件模块，与软核规划及 125 Hz 轮腿强化学习控制同片衔接运行（四时钟域 0 时序违例）。
-- 结合轮速、IMU 与**结构似然场（SLF）**匹配进行定位，通过 **Hessian 退化判别**抑制弱约束方向误修正；按雷达采集时刻对齐位姿，采用**先匹配、后融合**流程降低定位漂移与姿态突变对建图的影响。
-- 实现记忆栅格与近场地图上的**分层 A\* 规划**，结合硬件批量轨迹评分、机体足迹及轮地支撑检查处理复杂地形约束，串联自主探索、目标搜索跟随与受阻恢复。
-- 协同部署 **RK3588 边缘多模态任务引擎**（YOLO26n、RGB-D 目标定位及本地语音/语言理解服务），打通目标识别、指令解析、用户确认、FPGA 执行与状态反馈，并接入 Web 与微信小程序交互。
+- 自主设计并搭建基于 **RTL + PicoRV32 RISC-V 软核**协同的 FPGA 片内导航架构，构建“点云感知 → 融合定位 → 局部建图 → 路径规划 → 运动控制”片内链路，将固态雷达滚动高程建图、三维地形代价分析、结构匹配与局部轨迹评估实现为硬件模块，并与轮腿强化学习控制策略完成单片 FPGA 集成。
+- 结合轮速、IMU 与 **SLF 匹配定位**进行位姿估计，通过 **Hessian 退化判别**抑制弱约束方向误修正；按雷达采集时刻对齐位姿，采用**先匹配、后融合**流程降低定位漂移与姿态突变对建图的影响。
+- 实现记忆栅格与近场地图上的**分层 A\* 规划**，结合硬件批量轨迹评分、机体足迹及轮地支撑检查处理复杂地形约束，支持无图自主探索、先验图重定位、目标搜索跟随与受阻恢复。
+- 在 **RK3588 本地离线部署多模态任务引擎**（量化版 YOLO26n、Qwen3-1.7B、SenseVoice 与 TTS），结合 RGB-D 实现目标检测与三维定位，支持语音找物、人员跟随、FPGA 自主执行及 Web 与微信小程序交互。
 
 **后续 V2.0** 将基于现有平台重新设计四连杆轮腿结构，在整车结构定型后开展强化学习训练，结合训练与实机验证持续优化结构与运动稳定性，逐步实现倒地自启、跳跃等能力，并作为**视觉语言导航（VLN）**的学习与实验平台。
 
@@ -134,9 +134,9 @@
 
 | Type | Work | Status |
 | --- | --- | --- |
-| Conference paper | *Anisotropic Spatiotemporal Risk Field for Smooth Predictive Navigation of Mobile Robots in Dynamic Environments* | ACIRS 2026 · accepted · first author |
-| Invention patent | 移动机器人预测性导航与动态避障方法及系统 | formally accepted · second inventor |
-| Invention patent | 一种蛇形机器人从支撑平面挂载至悬空水平管道的方法及系统 | formally accepted · third inventor |
+| Conference paper | *Anisotropic Spatiotemporal Risk Field for Smooth Predictive Navigation of Mobile Robots in Dynamic Environments* | ACIRS 2026 · published · first author |
+| Invention patent | 移动机器人预测性导航与动态避障方法及系统 | published, under substantive examination · second inventor |
+| Invention patent | 一种蛇形机器人从支撑平面挂载至悬空水平管道的方法及系统 | formally accepted · fourth inventor |
 
 ## Selected Honors
 
@@ -154,7 +154,7 @@
 | FPGA & embedded | Gowin FPGA, Verilog RTL, RISC-V (PicoRV32), fixed-point hardware integration, RT-Thread |
 | Simulation | MuJoCo, Gazebo |
 | Programming | C/C++, Python, Verilog, Linux, Git |
-| Vision & numerical tools | OpenCV, Eigen, NumPy, Matplotlib |
+| Vision & numerical tools | OpenCV, Eigen, NumPy, Matplotlib, PyTorch (basic) |
 | System engineering | RK3588 (RKNN / RKLLM), FastAPI, Vue, WeChat MiniProgram, HTTPS/WSS, edge-cloud communication |
 | Currently learning | Reinforcement learning fundamentals and embodied intelligence |
 
